@@ -40,6 +40,8 @@ export function AuthProvider(props: AuthProvider) {
             code: githubCode,
         })
 
+        console.log(githubCode, response)
+
         const { token, user } = response.data
 
         localStorage.setItem('@dowhile:token', token)
@@ -68,7 +70,9 @@ export function AuthProvider(props: AuthProvider) {
 
     useEffect(() => {
         const url = window.location.href;
-        const hasGithubCode = url.includes('?code=');
+        const hasGithubCode = url.includes('?code=')
+
+        console.log(url)
 
         if (hasGithubCode) {
             const [urlWithoutCode, githubCode] = url.split('?code=');
