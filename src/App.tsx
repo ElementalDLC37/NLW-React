@@ -11,7 +11,7 @@ export function App() {
   return (
     <main className={styles.contentWrapper}>
       <MessageList />
-      { !!user ? <SendMessageForm /> : <LoginBox /> }
+      { user ? <SendMessageForm /> : <LoginBox /> }
     </main>
   )
 }
